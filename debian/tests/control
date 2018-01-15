@@ -1,0 +1,14 @@
+Tests: srun
+Features: no-build-needed,isolation-container
+Restrictions: needs-root
+Depends: slurmctld, slurmd, slurm-client
+
+Tests: sbatch
+Features: no-build-needed,isolation-container
+Restrictions: needs-root
+Depends: slurmctld, slurmd, slurm-client
+
+Tests: sacct
+Features: no-build-needed,isolation-container
+Restrictions: needs-root
+Depends: slurmctld, slurmd, slurm-client, slurmdbd, mariadb-client, mariadb-server

@@ -1,0 +1,50 @@
+Description: mail command absolute pathname                       
+ This patch changes the default command to /usr/bin/mail in various
+  configuration files and manual pages.                            
+Author: Gennaro Oliva <oliva.g@na.icar.cnr.it>                    
+Bug-Debian: http://bugs.debian.org/588862
+Forwarded: no
+Last-Update: 2015-09-23
+
+--- a/doc/man/man1/strigger.1
++++ b/doc/man/man1/strigger.1
+@@ -304,7 +304,7 @@
+ strigger \-\-set \-\-primary_slurmctld_failure \\
+          \-\-program=/usr/sbin/primary_slurmctld_failure
+ # Notify the administrator of the failure using by e\-mail
+-/bin/mail slurm_admin@site.com \-s Primary_SLURMCTLD_FAILURE
++/usr/bin/mail slurm_admin@site.com \-s Primary_SLURMCTLD_FAILURE
+ 
+ > strigger \-\-set \-\-primary_slurmctld_failure \\
+            \-\-program=/usr/sbin/primary_slurmctld_failure
+@@ -323,7 +323,7 @@
+ strigger \-\-set \-\-node \-\-down \\
+          \-\-program=/usr/sbin/slurm_admin_notify
+ # Notify administrator using by e\-mail
+-/bin/mail slurm_admin@site.com \-s NodesDown:$*
++/usr/bin/mail slurm_admin@site.com \-s NodesDown:$*
+ 
+ > strigger \-\-set \-\-node \-\-down \\
+            \-\-program=/usr/sbin/slurm_admin_notify
+--- a/doc/man/man5/slurm.conf.5
++++ b/doc/man/man5/slurm.conf.5
+@@ -1324,7 +1324,7 @@
+ .TP
+ \fBMailProg\fR
+ Fully qualified pathname to the program used to send email per user request.
+-The default value is "/bin/mail".
++The default value is "/usr/bin/mail".
+ 
+ .TP
+ \fBMaxArraySize\fR
+--- a/src/common/read_config.h
++++ b/src/common/read_config.h
+@@ -117,7 +117,7 @@
+ #  define DEFAULT_LAUNCH_TYPE         "launch/slurm"
+ #endif
+ 
+-#define DEFAULT_MAIL_PROG           "/bin/mail"
++#define DEFAULT_MAIL_PROG           "/usr/bin/mail"
+ #define DEFAULT_MAX_ARRAY_SIZE      1001
+ #define DEFAULT_MAX_JOB_COUNT       10000
+ #define DEFAULT_MAX_JOB_ID          0x03ff0000

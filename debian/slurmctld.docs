@@ -1,0 +1,7 @@
+NEWS
+README.rst
+AUTHORS
+RELEASE_NOTES
+debian/README.cryptotype-openssl
+debian/slurm-wlm-configurator.html
+debian/slurm-wlm-configurator.easy.html
