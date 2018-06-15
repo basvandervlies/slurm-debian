@@ -1,3 +1,9 @@
+slurm-llnl (17.11.7-1) UNRELEASED; urgency=low
+
+  * New 17.11.7 version
+
+ -- Bas van der Vlies <bas.vandervlies@surfsara.nl>  Fri, 15 Jun 2018 12:05:15 +0200
+
 slurm-llnl (17.02.9-1) unstable; urgency=medium
 
   * New upstream release fixes CVE-2017-15566 (Closes: #880530)
