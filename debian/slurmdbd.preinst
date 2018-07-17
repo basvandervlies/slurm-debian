@@ -20,9 +20,9 @@ case "$1" in
         SLURMUID=$(id -u slurm 2>/dev/null)
         SLURMGID=$(id -g slurm 2>/dev/null)
         SLURMHOME=$(eval echo ~slurm)
-        if [ "$SLURMUID" != "64030" ] || [ "$SLURMGID" != "64030" ] ; then
+        if [ "$SLURMUID" != "555" ] || [ "$SLURMGID" != "555" ] ; then
           deluser --quiet slurm
-          adduser --quiet --system --group --uid 64030 --no-create-home --home /nonexistent slurm
+          adduser --quiet --system --group --uid 555 --no-create-home --home /nonexistent slurm
         fi
         if [ "$SLURMHOME" != "/nonexistent" ] && [ ! -e $SLURMHOME ] && \
            [ ! -e /var/run/slurm-llnl/slurmctld.pid ] && \
@@ -30,7 +30,7 @@ case "$1" in
             usermod --home /nonexistent slurm || true
         fi
       else
-        adduser --quiet --system --group --uid 64030 --no-create-home --home /nonexistent slurm
+        adduser --quiet --system --group --uid 555 --no-create-home --home /nonexistent slurm
       fi
 
       # Copying relevant changes from the old default file
@@ -58,9 +58,9 @@ case "$1" in
         SLURMUID=$(id -u slurm 2>/dev/null)
         SLURMGID=$(id -g slurm 2>/dev/null)
         SLURMHOME=$(eval echo ~slurm)
-        if [ "$SLURMUID" != "64030" ] || [ "$SLURMGID" != "64030" ] ; then
+        if [ "$SLURMUID" != "555" ] || [ "$SLURMGID" != "555" ] ; then
           deluser --quiet slurm
-          adduser --quiet --system --group --uid 64030 --no-create-home --home /nonexistent slurm
+          adduser --quiet --system --group --uid 555 --no-create-home --home /nonexistent slurm
         fi
         if [ "$SLURMHOME" != "/nonexistent" ] && [ ! -e $SLURMHOME ] && \
            [ ! -e /var/run/slurm-llnl/slurmctld.pid ] && \
@@ -68,7 +68,7 @@ case "$1" in
             usermod --home /nonexistent slurm || true
         fi
       else
-        adduser --quiet --system --group --uid 64030 --no-create-home --home /nonexistent slurm
+        adduser --quiet --system --group --uid 555 --no-create-home --home /nonexistent slurm
       fi
     ;;
 

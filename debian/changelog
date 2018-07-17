@@ -1,3 +1,9 @@
+slurm-llnl (17.11.7-2) UNRELEASED; urgency=medium
+
+  * Updated debian package info this version replace all version <= 17.02 
+
+ -- Bas van der Vlies <bas@test3.irc.sara.nl.irc.sara.nl>  Thu, 21 Jun 2018 10:03:12 +0200
+
 slurm-llnl (17.11.7-1) UNRELEASED; urgency=low
 
   * New 17.11.7 version
