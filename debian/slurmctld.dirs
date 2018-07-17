@@ -1,3 +1,4 @@
 var/lib/slurm-llnl/slurmctld
 var/log/slurm-llnl
+var/spool/slurm-llnl
 etc/slurm-llnl
