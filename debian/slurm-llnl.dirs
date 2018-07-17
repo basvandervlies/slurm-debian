@@ -4,3 +4,4 @@ var/lib/slurm-llnl/slurmd
 var/lib/slurm-llnl/slurmctld
 var/lib/slurm-llnl/checkpoint
 var/log/slurm-llnl
+var/spool/slurm-llnl

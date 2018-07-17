@@ -23,6 +23,7 @@ case "$1" in
       chown slurm:slurm /var/lib/slurm-llnl/slurmd
       chown slurm:slurm /var/lib/slurm-llnl/checkpoint
       chown slurm:slurm /var/log/slurm-llnl
+      chown slurm:slurm /var/spool/slurm-llnl
 
       # Check for a major release upgrade from version 1
       OLDMAJREL=$(echo $2 | sed "s/\..*//")

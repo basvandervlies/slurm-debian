@@ -1,3 +1,9 @@
+slurm-llnl (17.11.7-4) UNRELEASED; urgency=medium
+
+  * /var/spool/slurm-llnl must owned by slurm.slurm 
+
+ -- Bas van der Vlies <bas.vandervlies@surfsara.nl>  Tue, 17 Jul 2018 16:04:05 +0200
+
 slurm-llnl (17.11.7-3) UNRELEASED; urgency=medium
 
   * Change uid/gid to 555. No clash with CUA
