@@ -1,3 +1,10 @@
+slurm-llnl (17.11.9-1) UNRELEASED; urgency=medium
+
+  * Update Slurm to 17.11.9
+  * Build libpam_slurm_adopt.so
+
+ -- Martijn Kruiten <martijn.kruiten@surfsara.nl>  Mon, 03 Sep 2018 15:35:31 +0200
+
 slurm-llnl (17.11.7-4) UNRELEASED; urgency=medium
 
   * /var/spool/slurm-llnl must owned by slurm.slurm 
