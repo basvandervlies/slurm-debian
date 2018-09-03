@@ -43,6 +43,9 @@ override_dh_auto_install:
 	# run make install for libpam-slurm pkg
 	$(MAKE) -C obj-$(DEB_BUILD_GNU_TYPE)/contribs/pam install DESTDIR=$(CURDIR)/debian/tmp
 	
+	# run make install for libpam-slurm-adopt pkg
+	$(MAKE) -C obj-$(DEB_BUILD_GNU_TYPE)/contribs/pam_slurm_adopt install DESTDIR=$(CURDIR)/debian/tmp
+	
 	# run make install for libslurm[db]-perl pkgs
 	$(MAKE) -C obj-$(DEB_BUILD_GNU_TYPE)/contribs/perlapi install DESTDIR=$(CURDIR)/debian/tmp PERL_MM_OPT="INSTALLDIRS=vendor"
 	find debian/tmp/$(PERL_ARCHLIB) -type f -name "*.so" | xargs chrpath -d
@@ -110,6 +113,7 @@ override_dh_strip:
 	dh_strip -plibslurm-perl --no-automatic-dbgsym
 	dh_strip -psview --no-automatic-dbgsym
 	dh_strip -plibpam-slurm --no-automatic-dbgsym
+	dh_strip -plibpam-slurm-adopt --no-automatic-dbgsym
 	dh_strip -pslurm-wlm-emulator --no-automatic-dbgsym
 	dh_strip -pslurm-client-emulator --no-automatic-dbgsym
 	dh_strip -plibpmi0-dev --no-automatic-dbgsym

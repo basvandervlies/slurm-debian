@@ -335,6 +335,19 @@ Description: PAM module to authenticate using the SLURM resource manager
  restricted to user root and users who have been allocated resources on
  that node.
 
+Package: libpam-slurm-adopt
+Architecture: any
+Pre-Depends: ${misc:Pre-Depends}
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends}
+Description: The purpose of this module is to prevent users from sshing into
+ nodes that they do not have a running job on, and to track the ssh connection
+ and any other spawned processes for accounting and to ensure complete job
+ cleanup when the job is completed. This module does this by determining the
+ job which originated the ssh connection. The user's connection is "adopted"
+ into the "external" step of the job.
+
 Package: slurm-llnl
 Architecture: all
 Section: oldlibs
