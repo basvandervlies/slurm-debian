@@ -53,6 +53,9 @@ override_dh_auto_install:
 	# run make install for slurm-wlm-torque pkg
 	$(MAKE) -C obj-$(DEB_BUILD_GNU_TYPE)/contribs/torque install DESTDIR=$(CURDIR)/debian/tmp
 
+	# run make install for PMI pkg
+	$(MAKE) -C obj-$(DEB_BUILD_GNU_TYPE)/contribs/pmi install DESTDIR=$(CURDIR)/debian/tmp
+
 	# run make install for PMI2 pkg
 	$(MAKE) -C obj-$(DEB_BUILD_GNU_TYPE)/contribs/pmi2 install DESTDIR=$(CURDIR)/debian/tmp
 
