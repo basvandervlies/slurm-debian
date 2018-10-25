@@ -33,9 +33,6 @@ override_dh_auto_build:
 override_dh_auto_install:
 	dh_auto_install
 	
-	# clear dependency_libs field in *.la files
-	# see lintian non-empty-dependency_libs-in-la-file for reference
-	sed -i "/dependency_libs/ s/'.*'/''/" `find debian/tmp/ -name '*.la'`
 	# Rename slurm(1) manpage before dh_installman run. It is not possible
 	# to rename manpages in debian/*.manpages so hardcore `mv` is done here
 	mv debian/tmp/usr/share/man/man1/slurm.1 debian/tmp/usr/share/man/man1/slurm-wlm.1
@@ -58,6 +55,10 @@ override_dh_auto_install:
 
 	# run make install for PMI2 pkg
 	$(MAKE) -C obj-$(DEB_BUILD_GNU_TYPE)/contribs/pmi2 install DESTDIR=$(CURDIR)/debian/tmp
+
+	# clear dependency_libs field in *.la files
+	# see lintian non-empty-dependency_libs-in-la-file for reference
+	sed -i "/dependency_libs/ s/'.*'/''/" `find debian/tmp/ -name '*.la'`
 
 	# Rename mpiexec to mpiexec.slurm
 	mv debian/tmp/usr/bin/mpiexec	debian/tmp/usr/bin/mpiexec.slurm
@@ -100,6 +101,10 @@ override_dh_auto_install:
 	mv debian/tmp-emulator/usr/bin/sacctmgr debian/tmp-emulator/usr/bin/sacctmgr-emulator
 	mv debian/tmp-emulator/usr/bin/scontrol debian/tmp-emulator/usr/bin/scontrol-emulator
 	mv debian/tmp-emulator/usr/bin/sstat	debian/tmp-emulator/usr/bin/sstat-emulator
+
+	# Just remove all the la libraries. produces only errors
+	#find debian/ -name \*\.la | xargs rm
+
 
 override_dh_strip:
 	dh_strip -plibslurm31 --dbgsym-migration='libslurm31-dbg (<< 17.02.6~)'
