@@ -1,8 +1,10 @@
-slurm-llnl (18.08.3-1) UNRELEASED; urgency=medium
+slurm-llnl (18.08.3-3) UNRELEASED; urgency=medium
 
   * Update Slurm to 18.08.3.
+  * Added dependency for libssh2-1-dev, x11 forwarding
+  * remove configure options: --enable-front-end, --enable-multiple-slurmd
 
- -- Bas van der Vlies <bas.vandervlies@surfsara.nl>  Thu, 25 Oct 2018 14:56:55 +0200
+ -- Bas van der Vlies <bas@test3.irc.sara.nl.irc.sara.nl>  Tue, 30 Oct 2018 15:42:47 +0100
 
 slurm-llnl (18.08.1-1) stable; urgency=medium
 

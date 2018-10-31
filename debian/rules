@@ -23,8 +23,8 @@ override_dh_auto_clean:
 # Notice that -g in CFLAGS is still provided by dpkg-buildflags
 override_dh_auto_configure:
 	dh_autoreconf
-	dh_auto_configure -- --sysconfdir=/etc/slurm-llnl --localstatedir=/var/run/slurm-llnl --with-munge --without-blcr --enable-pam --without-rpath --disable-debug --enable-multiple-slurmd
-	dh_auto_configure --builddirectory build-emulator -- -sysconfdir=/etc/slurm-llnl --localstatedir=/var/run/slurm-llnl --with-munge --without-blcr --enable-pam --without-rpath --disable-debug --enable-front-end --enable-multiple-slurmd
+	dh_auto_configure -- --sysconfdir=/etc/slurm-llnl --localstatedir=/var/run/slurm-llnl --with-munge --without-blcr --enable-pam --without-rpath --enable-debug
+	dh_auto_configure --builddirectory build-emulator -- -sysconfdir=/etc/slurm-llnl --localstatedir=/var/run/slurm-llnl --with-munge --without-blcr --enable-pam --without-rpath --enable-debug
 
 override_dh_auto_build:
 	dh_auto_build

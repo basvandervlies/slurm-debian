@@ -16,6 +16,7 @@ Build-Depends:
  default-libmysqlclient-dev,
  libpam0g-dev,
  libperl-dev,
+ libssh2-1-dev,
  chrpath,
  libpam0g-dev,
  liblua5.1-0-dev,
